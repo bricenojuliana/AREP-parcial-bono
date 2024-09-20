@@ -106,6 +106,25 @@ public class CalcreflexBEServer {
 
             System.out.println("Función: " + funcion);
             System.out.println("Números:");
+            if (funcion.equals("bbl")){
+                int[] numbers = new int[numeros.length];
+                int i = 0;
+                for (String num : numeros) {
+                    System.out.println(num);
+                    numbers[i] = Integer.parseInt(num);
+                    i++;
+                }
+                int[] resp = bubbleSort(numbers);
+                StringBuilder res = new StringBuilder();
+                for (int num : resp) {
+                    res.append(num).append(",");
+                }
+                if (res.length() > 0) {
+                    res.deleteCharAt(res.length() - 1);
+                }
+                System.out.println(res.toString());
+                return res.toString();
+            }
             Class[] parameterTypes = new Class[numeros.length];
             int i = 0;
             Object[] params = new Object[numeros.length];
@@ -124,9 +143,26 @@ public class CalcreflexBEServer {
 
             return resp;
         }
-
-
-
         return "";
+    }
+
+    public static int[] bubbleSort(int[] numbers) {
+        int n = numbers.length;
+        boolean swapped;
+
+        do {
+            swapped = false;
+            for (int i = 0; i < n - 1; i++) {
+                if (numbers[i] > numbers[i + 1]) {
+                    int temp = numbers[i];
+                    numbers[i] = numbers[i + 1];
+                    numbers[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            n--;
+        } while (swapped);
+
+        return numbers;
     }
 }
