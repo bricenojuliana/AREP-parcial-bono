@@ -77,10 +77,11 @@ La aplicación está compuesta por tres componentes principales, distribuidos en
 
 1. Clonar el repositorio.
 2. Compilar usando maven
-   ```
+  ```
   mvn clean install
   ```
 4. Ejecutar la clase `CalcreflexFacade`.
+
   ```
   java -cp target/AREP-parcial-bono-1.0-SNAPSHOT.jar edu.escuelaing.arem.ASE.app.CalcreflexFacade
   ```
@@ -95,11 +96,12 @@ La aplicación está compuesta por tres componentes principales, distribuidos en
 ### 3. Cliente Web
 
 1. El cliente web se puede acceder desde un navegador al hacer una solicitud GET a:
+   
    ```
    http://localhost:35000/
    ```
 
-2. Ingresar un comando en el formulario y presionar **Submit** para obtener el resultado.
+3. Ingresar un comando en el formulario y presionar **Submit** para obtener el resultado.
 
 ## Notas Importantes
 
